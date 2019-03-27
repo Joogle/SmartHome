@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from hermes_python.hermes import Hermes
 
 MQTT_ADDR = "localhost:1883"        # Specify host and port for the MQTT broker
@@ -11,4 +12,4 @@ def subscribe_zimmer_callback(hermes, intent_message):    # Defining callback fu
 with Hermes(MQTT_ADDR) as h: # Initialization of a connection to the MQTT broker
     h.subscribe_intent("Zimmer", Zimmer) \  # Registering callback functions to handle the searchWeatherForecast intent
          .start()
-    # We get out of the with block, which closes and releases the connection.
+    # We get out of the with block, which closes and releases the connection
