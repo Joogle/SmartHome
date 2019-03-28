@@ -20,7 +20,7 @@ def intent_received(hermes, intent_message):
     sentence = 'Hallo ich funktioniere endlich...'
     if intent_message.intent.intent_name == '&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r:mDa':
         print('mDa')
-        sentence = 'Sie ist in' + days_between(datetime.dateisoformat(), "2019-06-28") + 'wieder da.'
+        sentence = 'Sie ist in' + days_between(datetime.date.isoformat(), "2019-06-28") + 'wieder da.'
 
     # else:
     #     return
