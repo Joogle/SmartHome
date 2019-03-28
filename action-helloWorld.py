@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from hermes_python.hermes import Hermes
-from date
+from datetime import datetime
 
 MQTT_IP_ADDR = "localhost"
 MQTT_PORT = 1883
@@ -10,12 +10,18 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 name = "&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r"
 
+
+def days_between(d1, d2):
+    d1 = datetime.strptime(d1, "%Y-%m-%d")
+    d2 = datetime.strptime(d2, "%Y-%m-%d")
+    return abs((d2 - d1).days)
+
 def intent_received(hermes, intent_message):
     sentence = 'Hallo ich funktioniere endlich...'
     if
     if intent_message.intent.intent_name == '&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r:mDa':
         print('mDa')
-        sentence = 'Sie ist bald wieder da.'
+        sentence = 'Sie ist in' + days_between(datetime.date, "2019-06-28") + 'wieder da.'
 
     # else:
     #     return
