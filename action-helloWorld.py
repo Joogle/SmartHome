@@ -18,7 +18,6 @@ def days_between(d1, d2):
 
 def intent_received(hermes, intent_message):
     sentence = 'Hallo ich funktioniere endlich...'
-    if
     if intent_message.intent.intent_name == '&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r:mDa':
         print('mDa')
         sentence = 'Sie ist in' + days_between(datetime.date, "2019-06-28") + 'wieder da.'
