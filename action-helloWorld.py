@@ -2,18 +2,20 @@
 # -*- coding: utf-8 -*-
 
 from hermes_python.hermes import Hermes
+from date
 
 MQTT_IP_ADDR = "localhost"
 MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
+name = "&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r"
 
 def intent_received(hermes, intent_message):
     sentence = 'Hallo ich funktioniere endlich...'
-
-    # if intent_message.intent.intent_name == 'searchWeatherForecast':
-    #     print('searchWeatherForecast')
-    #     sentence += 'the weather '
+    if
+    if intent_message.intent.intent_name == '&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r:mDa':
+        print('mDa')
+        sentence = 'Sie ist bald wieder da.'
 
     # else:
     #     return
