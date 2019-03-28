@@ -15,4 +15,4 @@ def subscribe_zimmer_callback(hermes, intent_message):    # Defining callback fu
 with Hermes(MQTT_ADDR) as h: # Initialization of a connection to the MQTT broker
     h.subscribe_intents(subscribe_zimmer_callback).start() \  # Registering callback functions to handle the searchWeatherForecast intent
          
-    # We get out of the with block, which closes and releases the connection
+#We get out of the with block, which closes and releases the connection
