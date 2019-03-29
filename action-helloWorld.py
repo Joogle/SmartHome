@@ -13,10 +13,10 @@ name = "&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r"
 def intent_received(hermes, intent_message):
     sentence = 'Hallo ich funktioniere endlich...'
     if intent_message.intent.intent_name == '&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r:mDa':
-        today = datetime.date.now()
+        today = datetime.date.today()
         dateOfReturn = datetime.date(2019, 6, 28)
         timedelta = abs(today - dateOfReturn)
-        sentence = 'Sie ist in' + timedelta.days + 'wieder da.'
+        sentence = 'Sie ist in' + str(timedelta.days) + 'wieder da.'
 
     hermes.publish_end_session(intent_message.session_id, sentence)
 
