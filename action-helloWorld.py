@@ -12,7 +12,7 @@ name = "&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r"
 
 def intent_received(hermes, intent_message):
     sentence = 'Hallo ich funktioniere endlich...'
-    if intent_message.intent.intent_name == name + ':mDa':
+    if intent_message.intent.intent_name == '&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r:mDa':
         today = datetime.date.now()
         dateOfReturn = datetime.date(2019, 6, 28)
         timedelta = abs(today - dateOfReturn)
