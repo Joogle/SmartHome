@@ -17,7 +17,7 @@ def intent_received(hermes, intent_message):
         dateOfToday = datetime.date.today()
         dateOfReturn = datetime.date(2019, 6, 28)
         timedelta = abs(dateOfToday - dateOfReturn)
-        sentence = 'Sie ist in' + str(timedelta.days) + 'wieder da.'
+        sentence = 'Sie ist in ' + str(timedelta.days) + ' Tagen wieder da.'
     hermes.publish_end_session(intent_message.session_id, sentence)
 
 
