@@ -20,12 +20,17 @@ def intent_received(hermes, intent_message):
         timedelta = abs(dateOfToday - dateOfReturn)
         sentence = 'Sie ist in ' + str(timedelta.days) + ' Tagen wieder da.'
     if intent_message.intent.intent_name == name + ':Lichtsteuerung':
-        python_obj = json.loads(intent_message)
-        for slot in python_obj["slots"]:
-            if slot["slot_name"] == "Licht":
-                licht = slot["value"]["value"]
-            elif slot["slot_name"] == "an_aus":
-                an_aus = slot["value"]["value"]
+        #python_obj = json.loads(intent_message)
+        # for slot in python_obj["slots"]:
+        #     if slot["slot_name"] == "Licht":
+        #         licht = slot["value"]["value"]
+        #     elif slot["slot_name"] == "an_aus":
+        #         an_aus = slot["value"]["value"]
+        for slot in intent_message.slots:
+            if slot.slot_name == "Licht":
+                licht = slot.value.value
+            elif slot.slot_name == "an_aus":
+                an_aus = slot.value.value
         sentence = 'Ok, mache' + licht + an_aus
     hermes.publish_end_session(intent_message.session_id, sentence)
 
