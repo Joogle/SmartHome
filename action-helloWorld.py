@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from hermes_python.hermes import Hermes
+import json
 import datetime
 
 MQTT_IP_ADDR = "localhost"
