@@ -27,6 +27,7 @@ def intent_received(hermes, intent_message):
         #     elif slot["slot_name"] == "an_aus":
         #         an_aus = slot["value"]["value"]
         for slot in intent_message.slots:
+            print(slot)
             if slot.slot_name == "Licht":
                 licht = slot.value.value
             elif slot.slot_name == "an_aus":
