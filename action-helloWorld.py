@@ -14,6 +14,7 @@ sentence = ''
 
 
 def intent_received(hermes, intent_message):
+    print(intent_message)
     if intent_message.intent.intent_name == name + ':mDa':
         dateOfToday = datetime.date.today()
         dateOfReturn = datetime.date(2019, 6, 28)
