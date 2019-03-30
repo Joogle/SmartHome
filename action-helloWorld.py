@@ -27,12 +27,14 @@ def intent_received(hermes, intent_message):
         #         licht = slot["value"]["value"]
         #     elif slot["slot_name"] == "an_aus":
         #         an_aus = slot["value"]["value"]
-        for slot in intent_message.slots:
-            print(slot)
-            if slot.slot_name == "Licht":
-                licht = slot.value.value
-            elif slot.slot_name == "an_aus":
-                an_aus = slot.value.value
+        licht = intent_message.slots.Licht.first()
+        an_aus = intent_message.slots.an_aus.first()
+        # for slot in intent_message.slots:
+        #     print(slot)
+        #     if slot.slot_name == "Licht":
+        #         licht = slot.value.value
+        #     elif slot.slot_name == "an_aus":
+        #         an_aus = slot.value.value
         sentence = 'Ok, mache' + licht + an_aus
     hermes.publish_end_session(intent_message.session_id, sentence)
 
