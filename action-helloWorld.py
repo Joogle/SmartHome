@@ -35,7 +35,9 @@ def intent_received(hermes, intent_message):
         #         licht = slot.value.value
         #     elif slot.slot_name == "an_aus":
         #         an_aus = slot.value.value
-        sentence = 'Ok, mache' + licht + an_aus
+        print(licht)
+        print (an_aus)
+        sentence = 'Ok, mache {} {}'.format(licht, an_aus) 
     hermes.publish_end_session(intent_message.session_id, sentence)
 
 if __name__ == "__main__":
