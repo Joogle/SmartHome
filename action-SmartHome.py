@@ -9,14 +9,14 @@ MQTT_IP_ADDR = "localhost"
 MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
-name = "&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r"
+#name = "&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r"
+name = "Joogle"
 sentence = ''
 
 
 def intent_received(hermes, intent_message):
     print(intent_message)
     if intent_message.intent.intent_name == name + ':mDa':
-        
         dateOfToday = datetime.date.today()
         dateOfReturn = datetime.date(2019, 6, 28)
         timedelta = abs(dateOfToday - dateOfReturn)
