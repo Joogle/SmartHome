@@ -9,7 +9,7 @@ MQTT_IP_ADDR = "localhost"
 MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
-#name = "&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r"
+# name = "&APqvKWgN3mEoXVjPaPqOzQnya8J6G01wdYkOZM9r"
 name = "Joogle"
 sentence = ''
 
@@ -39,6 +39,14 @@ def intent_received(hermes, intent_message):
         print(licht)
         print(an_aus)
         sentence = 'Ok, mache {} {}'.format(licht, an_aus)
+    
+    # Wake up or sleep. 
+    if intent_message.intent.intent_name == name + ':Snips-wakeup_sleep':
+        an_aus = intent_message.slots.wake_sleep.first().value
+        if an_aus == "schlaf ein":
+            sentence = 'Ok, gehe schlafen.'
+        else if an_aus == "wach auf":
+            sentence = 'Ok, wacheich bin wach.'
     hermes.publish_end_session(intent_message.session_id, sentence)
 
 if __name__ == "__main__":
