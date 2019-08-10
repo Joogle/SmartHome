@@ -29,6 +29,7 @@ def intent_received(hermes, intent_message):
         #         an_aus = slot["value"]["value"]
         licht = intent_message.slots.Licht.first().value
         an_aus = intent_message.slots.an_aus.first().value
+        
         # for slot in intent_message.slots:
         #     print(slot)
         #     if slot.slot_name == "Licht":
