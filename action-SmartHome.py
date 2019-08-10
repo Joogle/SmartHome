@@ -16,12 +16,13 @@ sentence = ''
 def intent_received(hermes, intent_message):
     print(intent_message)
     if intent_message.intent.intent_name == name + ':mDa':
+        
         dateOfToday = datetime.date.today()
         dateOfReturn = datetime.date(2019, 6, 28)
         timedelta = abs(dateOfToday - dateOfReturn)
         sentence = 'Sie ist in ' + str(timedelta.days) + ' Tagen wieder da.'
     if intent_message.intent.intent_name == name + ':Lichtsteuerung':
-        #python_obj = json.loads(intent_message)
+        # python_obj = json.loads(intent_message)
         # for slot in python_obj["slots"]:
         #     if slot["slot_name"] == "Licht":
         #         licht = slot["value"]["value"]
@@ -29,7 +30,6 @@ def intent_received(hermes, intent_message):
         #         an_aus = slot["value"]["value"]
         licht = intent_message.slots.Licht.first().value
         an_aus = intent_message.slots.an_aus.first().value
-        
         # for slot in intent_message.slots:
         #     print(slot)
         #     if slot.slot_name == "Licht":
@@ -37,8 +37,8 @@ def intent_received(hermes, intent_message):
         #     elif slot.slot_name == "an_aus":
         #         an_aus = slot.value.value
         print(licht)
-        print (an_aus)
-        sentence = 'Ok, mache {} {}'.format(licht, an_aus) 
+        print(an_aus)
+        sentence = 'Ok, mache {} {}'.format(licht, an_aus)
     hermes.publish_end_session(intent_message.session_id, sentence)
 
 if __name__ == "__main__":
