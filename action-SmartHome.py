@@ -13,6 +13,7 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 name = "Joogle"
 sentence = ''
 
+
 def intent_received(hermes, intent_message):
     print(intent_message)
     if intent_message.intent.intent_name == name + ':mDa':
@@ -40,7 +41,7 @@ def intent_received(hermes, intent_message):
         sentence = 'Ok, mache {} {}'.format(licht, an_aus)
 
     # Wake up or sleep.
-    if intent_message.intent.intent_name == name + ':Snips-wakeup_sleep':
+    if intent_message.intent.intent_name == name + ':snips_wakeup_sleep':
         an_aus = intent_message.slots.wake_sleep.first().value
         if an_aus == "schlaf ein":
             sentence = 'Ok, gehe schlafen.'
